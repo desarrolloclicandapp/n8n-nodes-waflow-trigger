@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-base.waFlowTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development", "Communication"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://github.com/desarrolloclicandapp/n8n-nodes-waflow-trigger#credentials"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/desarrolloclicandapp/n8n-nodes-waflow-trigger"
+			}
+		]
+	}
+}
