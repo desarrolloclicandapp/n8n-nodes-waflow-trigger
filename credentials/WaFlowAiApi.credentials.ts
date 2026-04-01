@@ -31,21 +31,10 @@ export class WaFlowAiApi implements ICredentialType {
 			required: true,
 		},
 		{
-			displayName: 'Agency ID / Location ID',
-			name: 'subaccountId',
-			type: 'string',
-			default: '',
-			required: true,
-			description: 'Use your WaFloW Agency ID from the dashboard.',
-		},
-		{
 			displayName: 'Base URL',
 			name: 'baseUrl',
-			type: 'string',
+			type: 'hidden',
 			default: WAFLOW_BASE_URL,
-			placeholder: WAFLOW_BASE_URL,
-			required: true,
-			description: 'Production is the default. Override this only when you need to point the node to a staging or test WaFloW backend.',
 		},
 	];
 
@@ -54,7 +43,6 @@ export class WaFlowAiApi implements ICredentialType {
 		properties: {
 			headers: {
 				Authorization: '=Bearer {{$credentials.apiKey}}',
-				'X-Subaccount-Id': '={{$credentials.subaccountId}}',
 			},
 		},
 	};

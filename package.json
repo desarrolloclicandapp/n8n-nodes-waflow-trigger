@@ -1,55 +1,55 @@
 {
-	"name": "n8n-nodes-waflow-trigger",
-	"version": "0.2.3",
-	"description": "n8n community nodes for receiving WaFloW WhatsApp webhooks and sending messages through a specific slot",
-	"license": "MIT",
-	"homepage": "https://github.com/desarrolloclicandapp/n8n-nodes-waflow-trigger",
-	"keywords": [
-		"n8n-community-node-package",
-		"n8n",
-		"waflow",
-		"whatsapp",
-		"trigger",
-		"action"
-	],
-	"author": {
-		"name": "luis.porta@clicandapp.com",
-		"email": "desarrollo@clicandapp.com"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/desarrolloclicandapp/n8n-nodes-waflow-trigger.git"
-	},
-	"scripts": {
-		"build": "n8n-node build",
-		"build:watch": "tsc --watch",
-		"dev": "n8n-node dev",
-		"lint": "n8n-node lint",
-		"lint:fix": "n8n-node lint --fix",
-		"release": "n8n-node release"
-	},
-	"files": [
-		"dist"
-	],
-	"n8n": {
-		"n8nNodesApiVersion": 1,
-		"strict": true,
-		"credentials": [
-			"dist/credentials/WaFlowAiApi.credentials.js"
-		],
-		"nodes": [
-			"dist/nodes/WaFlowTrigger/WaFlowTrigger.node.js",
-			"dist/nodes/WaFlow/WaFlow.node.js"
-		]
-	},
-	"devDependencies": {
-		"@n8n/node-cli": "*",
-		"eslint": "9.32.0",
-		"prettier": "3.6.2",
-		"release-it": "^19.0.4",
-		"typescript": "5.9.2"
-	},
-	"peerDependencies": {
-		"n8n-workflow": "*"
-	}
+    "name":  "n8n-nodes-waflow-trigger",
+    "version":  "0.2.5",
+    "description":  "n8n community nodes for receiving WaFloW WhatsApp webhooks and sending messages through a specific slot",
+    "license":  "MIT",
+    "homepage":  "https://github.com/desarrolloclicandapp/n8n-nodes-waflow-trigger",
+    "keywords":  [
+                     "n8n-community-node-package",
+                     "n8n",
+                     "waflow",
+                     "whatsapp",
+                     "trigger",
+                     "action"
+                 ],
+    "author":  {
+                   "name":  "luis.porta@clicandapp.com",
+                   "email":  "desarrollo@clicandapp.com"
+               },
+    "repository":  {
+                       "type":  "git",
+                       "url":  "git+https://github.com/desarrolloclicandapp/n8n-nodes-waflow-trigger.git"
+                   },
+    "scripts":  {
+                    "build":  "n8n-node build",
+                    "build:watch":  "tsc --watch",
+                    "dev":  "n8n-node dev",
+                    "lint":  "n8n-node lint",
+                    "lint:fix":  "n8n-node lint --fix",
+                    "release":  "n8n-node release"
+                },
+    "files":  [
+                  "dist"
+              ],
+    "n8n":  {
+                "n8nNodesApiVersion":  1,
+                "strict":  true,
+                "credentials":  [
+                                    "dist/credentials/WaFlowAiApi.credentials.js"
+                                ],
+                "nodes":  [
+                              "dist/nodes/WaFlowTrigger/WaFlowTrigger.node.js",
+                              "dist/nodes/WaFlow/WaFlow.node.js"
+                          ]
+            },
+    "devDependencies":  {
+                            "@n8n/node-cli":  "*",
+                            "eslint":  "9.32.0",
+                            "prettier":  "3.6.2",
+                            "release-it":  "^19.0.4",
+                            "typescript":  "5.9.2"
+                        },
+    "peerDependencies":  {
+                             "n8n-workflow":  "*"
+                         }
 }

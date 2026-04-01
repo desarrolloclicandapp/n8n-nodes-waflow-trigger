@@ -7,7 +7,7 @@ import type {
 	INodePropertyOptions,
 } from 'n8n-workflow';
 
-export const WAFLOW_BASE_URL = 'https://wa.waflow.ai';
+export const WAFLOW_BASE_URL = 'https://test-development-whatsapp-back-service-v1.lrkqbo.easypanel.host';
 
 interface WaFlowSlotCatalogEntry extends IDataObject {
 	slotId?: number | null;
@@ -79,8 +79,8 @@ export async function getLocationOptions(this: ILoadOptionsFunctions): Promise<I
 			continue;
 		}
 
-		const label = String(account.label ?? '').trim()
-			|| String(account.name ?? '').trim()
+		const label = String(account.name ?? '').trim()
+			|| String(account.label ?? '').trim()
 			|| locationId;
 
 		options.push({
@@ -116,12 +116,12 @@ export async function getSlotOptions(this: ILoadOptionsFunctions): Promise<INode
 			continue;
 		}
 
-		const label = String(slot.label ?? '').trim()
-			|| String(slot.slotName ?? '').trim()
-			|| `Slot ${slotId}`;
+		const slotName = String(slot.slotName ?? '').trim();
+		const phoneNumber = String(slot.phoneNumber ?? '').trim();
+		const label = [slotName || `Slot ${slotId}`, phoneNumber].filter(Boolean).join(' - ');
 
 		options.push({
-			name: label,
+			name: label || `Slot ${slotId}`,
 			value: slotId,
 		});
 	}
