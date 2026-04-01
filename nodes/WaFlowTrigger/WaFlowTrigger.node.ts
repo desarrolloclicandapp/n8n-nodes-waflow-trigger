@@ -80,6 +80,7 @@ export class WaFlowTrigger implements INodeType {
 				type: 'options',
 				typeOptions: {
 					loadOptionsMethod: 'getSlots',
+					loadOptionsDependsOn: ['locationId'],
 				},
 				default: '',
 				required: true,

@@ -52,6 +52,7 @@ export class WaFlow implements INodeType {
 				type: 'options',
 				typeOptions: {
 					loadOptionsMethod: 'getSlots',
+					loadOptionsDependsOn: ['locationId'],
 				},
 				default: '',
 				required: true,
