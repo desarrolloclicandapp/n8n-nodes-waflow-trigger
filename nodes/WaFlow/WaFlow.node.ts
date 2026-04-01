@@ -16,14 +16,14 @@ const mainOutput = NodeConnectionTypes?.Main ?? 'main';
 
 export class WaFlow implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'WaFloW',
+		displayName: 'WaFloW Sender',
 		name: 'waFlow',
 		icon: { light: 'file:../WaFlowTrigger/waflow.svg', dark: 'file:../WaFlowTrigger/waflow.dark.svg' },
 		group: ['output'],
 		version: 1,
 		description: 'Send WhatsApp messages through a specific WaFloW slot',
 		defaults: {
-			name: 'WaFloW',
+			name: 'WaFloW Sender',
 		},
 		inputs: [mainOutput],
 		outputs: [mainOutput],

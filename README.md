@@ -5,7 +5,7 @@ This is an n8n community node package for [WaFloW.ai](https://waflow.ai).
 WaFloW is a platform for automating WhatsApp communications. This package provides:
 
 * **WaFloW Trigger**: Receives inbound or outbound webhook events from WaFloW.
-* **WaFloW**: Sends a WhatsApp message through a specific WaFloW slot.
+* **WaFloW Sender**: Sends a WhatsApp message through a specific WaFloW slot.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
@@ -29,7 +29,7 @@ Use this trigger when you want a workflow to start only for:
 * a specific **WaFloW account**
 * a specific **slot / number**
 
-### WaFloW
+### WaFloW Sender
 
 Use this action node to send a plain-text WhatsApp message through a selected WaFloW slot.
 
@@ -65,7 +65,7 @@ The official node uses the production WaFloW API URL automatically: `https://wa.
 
 ### Action
 
-1. Add the **WaFloW** node after any trigger or previous step.
+1. Add the **WaFloW Sender** node after any trigger or previous step.
 2. Select the **Account** and **Slot** you want to send from.
 3. Fill in the destination phone number and message.
 4. Execute the workflow.
