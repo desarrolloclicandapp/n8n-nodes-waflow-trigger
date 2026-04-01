@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-waflow-trigger",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"description": "n8n community nodes for receiving WaFloW WhatsApp webhooks and sending messages through a specific slot",
 	"license": "MIT",
 	"homepage": "https://github.com/desarrolloclicandapp/n8n-nodes-waflow-trigger",

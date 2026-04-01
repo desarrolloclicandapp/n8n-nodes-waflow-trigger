@@ -7,9 +7,9 @@ import type {
 } from 'n8n-workflow';
 import { NodeConnectionTypes } from 'n8n-workflow';
 import {
+	getBaseUrl,
 	getLocationOptions,
 	getSlotOptions,
-	WAFLOW_BASE_URL,
 } from '../shared/WaFlowApi';
 
 const mainOutput = NodeConnectionTypes?.Main ?? 'main';
@@ -103,9 +103,10 @@ export class WaFlow implements INodeType {
 				const slotId = Number(this.getNodeParameter('slotId', itemIndex));
 				const to = String(this.getNodeParameter('to', itemIndex) ?? '').trim();
 				const message = String(this.getNodeParameter('message', itemIndex) ?? '').trim();
+				const baseURL = await getBaseUrl.call(this);
 
 				const response = await this.helpers.httpRequestWithAuthentication.call(this, 'waFlowAiApi', {
-					baseURL: WAFLOW_BASE_URL,
+					baseURL,
 					url: '/agency/n8n/send-message',
 					method: 'POST',
 					body: {

@@ -1,4 +1,5 @@
 import type {
+	ICredentialDataDecryptedObject,
 	IDataObject,
 	IExecuteFunctions,
 	IHttpRequestOptions,
@@ -28,6 +29,15 @@ interface WaFlowSlotCatalogResponse extends IDataObject {
 
 type WaFlowRequestContext = ILoadOptionsFunctions | IExecuteFunctions;
 
+export async function getBaseUrl(
+	this: WaFlowRequestContext,
+): Promise<string> {
+	const credentials = (await this.getCredentials('waFlowAiApi')) as ICredentialDataDecryptedObject;
+	const configuredBaseUrl = String(credentials.baseUrl ?? '').trim();
+
+	return configuredBaseUrl || WAFLOW_BASE_URL;
+}
+
 export function normalizeSlotId(value: unknown): number | null {
 	const parsed = Number.parseInt(String(value ?? ''), 10);
 	return Number.isInteger(parsed) && parsed > 0 ? parsed : null;
@@ -37,8 +47,9 @@ async function requestCatalog(
 	this: WaFlowRequestContext,
 	locationId?: string,
 ): Promise<WaFlowSlotCatalogResponse> {
+	const baseURL = await getBaseUrl.call(this);
 	const requestOptions: IHttpRequestOptions = {
-		baseURL: WAFLOW_BASE_URL,
+		baseURL,
 		url: '/agency/n8n/slot-catalog',
 		method: 'GET',
 		json: true,

@@ -43,8 +43,7 @@ To configure the node, you will need the following information from your WaFloW 
 
 1. **API Key**: Your personal authentication key.
 2. **Agency ID / Location ID**: Your WaFloW agency identifier from the dashboard.
-
-The official node uses the production WaFloW API URL automatically: `https://wa.waflow.ai`.
+3. **Base URL**: Defaults to `https://wa.waflow.ai`. Override it only when testing against a staging or development WaFloW backend.
 
 ## Compatibility
 

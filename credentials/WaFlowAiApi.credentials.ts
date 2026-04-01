@@ -36,7 +36,16 @@ export class WaFlowAiApi implements ICredentialType {
 			type: 'string',
 			default: '',
 			required: true,
-			description: 'Use your WaFloW Agency ID from the dashboard. The official node uses the production API automatically.',
+			description: 'Use your WaFloW Agency ID from the dashboard.',
+		},
+		{
+			displayName: 'Base URL',
+			name: 'baseUrl',
+			type: 'string',
+			default: WAFLOW_BASE_URL,
+			placeholder: WAFLOW_BASE_URL,
+			required: true,
+			description: 'Production is the default. Override this only when you need to point the node to a staging or test WaFloW backend.',
 		},
 	];
 
@@ -52,7 +61,7 @@ export class WaFlowAiApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: WAFLOW_BASE_URL,
+			baseURL: '={{$credentials.baseUrl}}',
 			url: '/agency/api-keys',
 			method: 'GET',
 		},
