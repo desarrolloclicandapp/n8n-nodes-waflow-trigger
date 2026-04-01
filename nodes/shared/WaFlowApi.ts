@@ -7,7 +7,7 @@ import type {
 	INodePropertyOptions,
 } from 'n8n-workflow';
 
-export const WAFLOW_BASE_URL = 'https://test-development-whatsapp-back-service-v1.lrkqbo.easypanel.host';
+export const WAFLOW_BASE_URL = 'https://wa.waflow.ai';
 
 interface WaFlowSlotCatalogEntry extends IDataObject {
 	slotId?: number | null;
@@ -128,3 +128,4 @@ export async function getSlotOptions(this: ILoadOptionsFunctions): Promise<INode
 
 	return options;
 }
+
