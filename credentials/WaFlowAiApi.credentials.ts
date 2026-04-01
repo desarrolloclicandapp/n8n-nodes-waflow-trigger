@@ -5,6 +5,7 @@ import type {
 	Icon,
 	INodeProperties,
 } from 'n8n-workflow';
+import { WAFLOW_BASE_URL } from '../nodes/shared/WaFlowApi';
 
 export class WaFlowAiApi implements ICredentialType {
 	name = 'waFlowAiApi';
@@ -35,16 +36,7 @@ export class WaFlowAiApi implements ICredentialType {
 			type: 'string',
 			default: '',
 			required: true,
-			description: 'The agency or location identifier used by your WaFloW backend',
-		},
-		{
-			displayName: 'Base URL',
-			name: 'baseUrl',
-			type: 'string',
-			default: 'https://api.waflow.ai',
-			placeholder: 'https://api.waflow.ai',
-			description: 'The base URL of your WaFloW.ai installation',
-			required: true,
+			description: 'Use your WaFloW Agency ID from the dashboard. The official node uses the production API automatically.',
 		},
 	];
 
@@ -60,7 +52,7 @@ export class WaFlowAiApi implements ICredentialType {
 
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '={{$credentials.baseUrl}}',
+			baseURL: WAFLOW_BASE_URL,
 			url: '/agency/api-keys',
 			method: 'GET',
 		},

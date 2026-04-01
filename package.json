@@ -1,7 +1,7 @@
 {
 	"name": "n8n-nodes-waflow-trigger",
-	"version": "0.1.0",
-	"description": "n8n community node that triggers workflows from WaFloW WhatsApp webhook events",
+	"version": "0.2.1",
+	"description": "n8n community nodes for receiving WaFloW WhatsApp webhooks and sending messages through a specific slot",
 	"license": "MIT",
 	"homepage": "https://github.com/desarrolloclicandapp/n8n-nodes-waflow-trigger",
 	"keywords": [
@@ -9,7 +9,8 @@
 		"n8n",
 		"waflow",
 		"whatsapp",
-		"trigger"
+		"trigger",
+		"action"
 	],
 	"author": {
 		"name": "luis.porta@clicandapp.com",
@@ -17,7 +18,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/desarrolloclicandapp/n8n-nodes-waflow-trigger.git"
+		"url": "git+https://github.com/desarrolloclicandapp/n8n-nodes-waflow-trigger.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
@@ -37,7 +38,8 @@
 			"dist/credentials/WaFlowAiApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/WaFlowTrigger/WaFlowTrigger.node.js"
+			"dist/nodes/WaFlowTrigger/WaFlowTrigger.node.js",
+			"dist/nodes/WaFlow/WaFlow.node.js"
 		]
 	},
 	"devDependencies": {
